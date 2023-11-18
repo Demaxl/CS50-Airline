@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block title %}Users{% endblock title %}
+
+{% block content %}
+
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+
+    <form action="{% url 'login' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username">
+        <input type="password" name="password" placeholder="Password">
+        <input type="submit" value="Login">
+    </form>
+{% endblock content %}

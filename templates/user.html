@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ request.user.username }}'s Dashboard{% endblock title %}
+
+{% block content %}
+    <!-- The template has access to the request method used to call it.
+    and since we are logged in, you can use the user object in the request method -->
+    <h1>Welcome, {{ request.user.first_name }}</h1>
+
+    <ul>
+        <li>Username: {{ request.user.username }}</li>
+        <li>Email: {{ request.user.email }}</li>
+    </ul>
+
+    <a href="{% url 'logout' %}">Log Out</a>
+{% endblock content %}

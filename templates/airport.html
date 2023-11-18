@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}Airports{% endblock title %}
+
+{% block content %}
+    <h1>{{ port.code }} Airport</h1>
+
+    <h2>Arrivals</h2>
+    <ul>
+        {% for a in arrivals %}
+            <li>{{ a }}</li>
+
+        {% empty %}
+            <li>No arrivals scheduled</li>
+
+        {% endfor %}
+
+    </ul>
+
+    <h2>Departures</h2>
+    <ul>
+        {% for d in departures %}
+            <li>{{ d }}</li>
+
+        {% empty %}
+            <li>No departures scheduled</li>
+        {% endfor %}
+    </ul>
+{% endblock content %}
